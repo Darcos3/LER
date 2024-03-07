@@ -1,0 +1,15 @@
+.principal {
+    background: url('../../assets/img/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 120%;
+}
+
+h1, h2, h3 {
+    color: #fff;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+}

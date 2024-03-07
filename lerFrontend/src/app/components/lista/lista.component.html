@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand text-uppercase" href="#"><img src="assets/img/logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <h1>Consulta de personas</h1>
+            <button type="button" class="btn btn-primary btn-sm  mx-5" data-bs-toggle="modal"
+            data-bs-target="#crear">Crear persona</button>
+            <button type="button" class="btn btn-dark btn-sm  mx-5" (click)="atras()">Salir del sistema</button>
+
+            <!-- Modal crear -->
+            <div class="modal fade" id="crear" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Crear Persona</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" #nombre>
+                                </div>
+                                <div class="form-group">
+                                    <label>Número de identificación</label>
+                                    <input type="number" class="form-control" name="num_ide" #num_ide>
+                                </div>
+                                <div class="form-group">
+                                    <label>Fecha de nacimiento</label>
+                                    <input type="date" class="form-control" name="fecha_nac" #fecha_nac>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                (click)="crear(nombre, num_ide, fecha_nac)">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<table class="table">
+    <thead class="table table-sm table-bordered table-hover text-capitalize">
+        <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>numero de identificación</th>
+            <th>fecha de nacimiento</th>
+            <th>Opcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of personas">
+            <td scope="row">{{ p.id }}</td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.numero_identificacion }}</td>
+            <td>{{ p.fecha_nacimiento }}</td>
+            <td>
+                <button type="button" class="btn btn-warning btn-sm" (click)="editar(p.id)"> Editar</button>
+                <button type="button" class="btn btn-danger btn-sm mx-3" (click)="eliminar(p.id)"> Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

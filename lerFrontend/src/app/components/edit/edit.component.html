@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand text-uppercase" href="#"><img src="assets/img/logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <h1>Modificación de personas</h1>
+        </div>
+    </div>
+</nav>
+
+<div class="card col-md-6 offset-md-3 p-5">
+    <p>¿Estas seguro que quieres modificar los datos de la persona llamada {{ datos.nombre }} ?</p>
+    <form>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control" name="nombre" #nombre value="{{ datos.nombre }}">
+        </div>
+        <div class="form-group">
+            <label>Número de identificación</label>
+            <input type="number" class="form-control" name="num_ide" #num_ide value="{{ datos.numero_identificacion }}">
+        </div>
+        <div class="form-group">
+            <label>Fecha de nacimiento</label>
+            <input type="date" class="form-control" name="fecha_nac" #fecha_nac value="{{ datos.fecha_nacimiento }}">
+        </div><br>
+        <div class="text-center">
+            <button type="button" class="btn btn-warning" (click)="editar(nombre, num_ide, fecha_nac)">Modificar</button>
+            <button type="button" class="btn btn-danger mx-3" (click)="atras()">Cancelar</button>
+        </div>
+    </form>
+</div>

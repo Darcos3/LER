@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="card text-center col-md-6 offset-md-3 mt-5 p-1 principal" *ngIf="!listar">
+        <div class="p-5">
+            <img src="assets/img/logo.png" alt="" class="img fluid logo"><br>
+            <h1 class="text-uppercase">ler</h1>
+            <h2 class="text-capitalize">Prueba técnica</h2>
+            <h3 class="text-capitalize">Java - angular - postgresql</h3>
+
+            <button type="button" class="btn btn-primary mt-5" (click)="comenzar()">Comenzar</button>
+            <br><br>
+            <p><small class="mt-5">&copy; Daniel Arcos<br>2024</small></p>
+        </div>
+    </div>
+
+    <app-lista *ngIf="listar"></app-lista>
+
+
+</div>
